@@ -2,122 +2,46 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #f2f2f2;
-  margin: 0;
-  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
 }
 
 #game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  width: 95vw;        /* takes almost full screen width */
-  max-width: 450px;   /* prevents it from being too large on big screens */
+  gap: 10px;
+  width: 95vw;
+  max-width: 500px;
 }
 
 .cell {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* keeps cells perfectly square */
-  font-size: 8vw;        /* X and O scale with screen */
+  aspect-ratio: 1 / 1;
+  font-size: 10vw;
   font-weight: bold;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #333;
+  user-select: none;
+}
+
+.cell:hover {
+  background-color: #ddd;
+}
+
+#reset {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
   cursor: pointer;
 }
-
-h1 {
-    margin-top: 30px;
-}
-
-/* Game board */
-.game-board {
-    width: 320px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
-
-/* Cells */
-.cell {
-    width: 100px;
-    height: 100px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    font-size: 64px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-/* Keep signs inside the box */
-.cell span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-/* Hover effect */
-.cell:hover {
-    background-color: #f1f1f1;
-    transform: scale(1.05);
-}
-
-/* X and O colors */
-.cell.X {
-    color: #ff4d4d;
-}
-
-.cell.O {
-    color: #4d79ff;
-}
-
-/* Popup */
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.popup.hidden {
-    display: none;
-}
-
-.popup-content {
-    background: white;
-    color: #333;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    width: 300px;
-}
-
-.popup-content h2 {
-    margin-bottom: 20px;
-}
-
-.popup-content button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    background-color: #667eea;
-    color: white;
-    cursor: pointer;
-}
-
-.popup-content button:hover {
-    background-color: #5a67d8;
-}
-
