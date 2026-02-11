@@ -1,9 +1,27 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    text-align: center;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 95vw;        /* takes almost full screen width */
+  max-width: 450px;   /* prevents it from being too large on big screens */
+}
+
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* keeps cells perfectly square */
+  font-size: 8vw;        /* X and O scale with screen */
+  font-weight: bold;
+  cursor: pointer;
 }
 
 h1 {
@@ -102,3 +120,4 @@ h1 {
 .popup-content button:hover {
     background-color: #5a67d8;
 }
+
