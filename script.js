@@ -29,6 +29,7 @@ cells.forEach((cell, i) => {
   cell.addEventListener('click', () => {
     if (!board[i] && !gameOver) {
       board[i] = currentPlayer;
+cells[i].style.color = currentPlayer === 'X' ? 'red' : 'blue'
       const result = checkWin();
       if (result) {
         gameOver = true;
@@ -46,3 +47,4 @@ resetBtn.addEventListener('click', () => {
   gameOver = false;
   updateBoard();
 });
+
